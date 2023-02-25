@@ -106,13 +106,9 @@ This scatterplot shows the number of steps based on the number of ingredients in
 
 <br/>
 
-This grouped table shows the average number of steps based on the number of ingredients in the recipe, and it does appear to have a correlation between those two variables. Number of ingredients are putted into 10 bins. By calculating the average steps base on each number of ingredients bins, it appears that with more ingredients, the number of the steps increases. 
-
-<!-- <br/>
-
-**Average Number of Steps based on the Number of Ingredients Range** -->
 
 | n_ingredients range   |   n_steps |
+
 | (0.968, 4.2]          |   6.03895 |
 | (4.2, 7.4]            |   7.83826 |
 | (7.4, 10.6]           |   9.93157 |
@@ -124,11 +120,11 @@ This grouped table shows the average number of steps based on the number of ingr
 | (26.6, 29.8]          |  23.9792  |
 | (29.8, 33.0]          |  22.913   |
 
-<!-- <br/>
+This grouped table shows the average number of steps based on the range that the number of ingredients of a recipe falls in, and there appears to be a correlation such that recipes with a number of ingredients that fall in a higher bin generally have a greater number of steps on average. We can also see here that the average number of steps of recipes with a number of ingredients in the range (26.6, 29.8] is the highest, at almost 24 steps. 
 
-**Average Number of Calories based on the Average Rating Range** -->
 
 | avg_rating range   |   calories |
+
 | (0.996, 1.4]       |    381.308 |
 | (1.4, 1.8]         |    391.865 |
 | (1.8, 2.2]         |    399.412 |

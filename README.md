@@ -123,12 +123,10 @@ This scatterplot shows the number of steps based on the number of ingredients in
 This grouped table shows the average number of steps based on the range that the number of ingredients of a recipe falls in, and there appears to be a correlation such that recipes with a number of ingredients that fall in a higher bin generally have a greater number of steps on average. We can see that that is not always consistent, as in bin (29.8, 33.0], and that the average number of steps of recipes with a number of ingredients in the range (26.6, 29.8] is the highest, at almost 24 steps. 
  
 
-
 <br/>
 
 
 | avg_rating range   |   calories |
-
 | (0.996, 1.4]       |    381.308 |
 | (1.4, 1.8]         |    391.865 |
 | (1.8, 2.2]         |    399.412 |
@@ -139,6 +137,7 @@ This grouped table shows the average number of steps based on the range that the
 | (3.8, 4.2]         |    392.149 |
 | (4.2, 4.6]         |    383.457 |
 | (4.6, 5.0]         |    383.374 |
+
 
 This grouped table shows the average number of calories based on the range that the average rating of a recipe falls in, and there appears to be no correlation that would allow us to say that recipes with an average rating that fall in a higher bin have a greater or lesser number of calories on average. We can also see that recipes with an average rating in the bin (1.8, 2.2] have the maximum of around 399 calories on average, while bin (2.2, 2.6] has the minimum of around 326 calories on average.
 

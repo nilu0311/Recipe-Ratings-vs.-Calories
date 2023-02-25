@@ -32,7 +32,6 @@ After downloading these datasets, we wanted to extract the average rating for ea
 
 Using this merged dataset, we calculated the average ratings of each recipe, and then added these values as the 'avg_rating' column, to each recipe they corresponded to, by merging on the `raw_recipes` dataset. It is this dataset, `raw_merged`, that we will clean and then use for our analysis for the rest of the report. 
 
-<br/>
 
 ---
 
@@ -92,6 +91,39 @@ This histogram shows the distribution of the `calories` column in our cleaned da
 For the bivariate analysis of the `clean_merged` DataFrame, we first extracted the `avg_rating`, `calories`, `n_steps`, and `n_ingredients` columns, and generated plots as below:
 
 <iframe src="assets/Bivariate_plt1.html" width=800 height=600 frameBorder=0></iframe>
+
+This scatterplot shows the average rating based on the number of calories in a recipe, and there …
+
+We can also see that most recipes are under 1,000 calories and most have an average rating greater than 4, and analysis of the dataset shows that of the 82,944 recipes, 266 have over 1,000 calories and a rating less than 4. 
+
+<iframe src="assets/Bivariate_plt2.html" width=800 height=600 frameBorder=0></iframe>
+
+This scatterplot shows the number of steps based on the number of ingredients in a recipe, and there does not appear to be a pattern such that a higher number of ingredients correlates to a higher or lower number of steps. We can also see that most recipes have at most 25 ingredients and 40 steps, and analysis of the dataset shows that of the 82,944 recipes, 9 have over 25 ingredients and 40 steps.
+
+<br/>
+
+### Interesting Aggregates:
+
+<br/>
+
+This grouped table shows the average number of steps based on the number of ingredients in the recipe, and it does appear to have a correlation between those two variables. Number of ingredients are putted into 10 bins. By calculating the average steps base on each number of ingredients bins, it appears that with more ingredients, the number of the steps increases. 
+
+<br/>
+
+**Average Number of Steps based on the Number of Ingredients**
+| n_ingredients range   |   n_steps |
+|:----------------------|----------:|
+| (0.968, 4.2]          |   6.03895 |
+| (4.2, 7.4]            |   7.83826 |
+| (7.4, 10.6]           |   9.93157 |
+| (10.6, 13.8]          |  11.8703  |
+| (13.8, 17.0]          |  14.3151  |
+| (17.0, 20.2]          |  17.225   |
+| (20.2, 23.4]          |  19.1429  |
+| (23.4, 26.6]          |  20.6111  |
+| (26.6, 29.8]          |  23.9792  |
+| (29.8, 33.0]          |  22.913   |
+
 
 ---
 ## Assessment of Missingness

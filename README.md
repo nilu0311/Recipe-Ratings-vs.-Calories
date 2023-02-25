@@ -108,7 +108,6 @@ This scatterplot shows the number of steps based on the number of ingredients in
 
 
 | n_ingredients range   |   n_steps |
-
 | (0.968, 4.2]          |   6.03895 |
 | (4.2, 7.4]            |   7.83826 |
 | (7.4, 10.6]           |   9.93157 |
@@ -140,6 +139,18 @@ This grouped table shows the average number of steps based on the range that the
 
 
 This grouped table shows the average number of calories based on the range that the average rating of a recipe falls in, and there appears to be no correlation that would allow us to say that recipes with an average rating that fall in a higher bin have a greater or lesser number of calories on average. We can also see that recipes with an average rating in the bin (1.8, 2.2] have the maximum of around 399 calories on average, while bin (2.2, 2.6] has the minimum of around 326 calories on average.
+
+| n_steps_range   |   (0.968, 4.2] |   (4.2, 7.4] |   (7.4, 10.6] |   (10.6, 13.8] |   (13.8, 17.0] |   (17.0, 20.2] |   (20.2, 23.4] |   (23.4, 26.6] |   (26.6, 29.8] |   (29.8, 33.0] |
+| (0.901, 10.9]   |        276.354 |      320.298 |       361.951 |        392.138 |        430.997 |        452.631 |        537.127 |        452.805 |        865.217 |        361.317 |
+| (10.9, 20.8]    |        344.189 |      382.13  |       412.293 |        451.501 |        496.685 |        570.917 |        579.733 |        700.842 |        664.119 |        820.633 |
+| (20.8, 30.7]    |        522.252 |      427.802 |       450.002 |        498.475 |        586.654 |        663.496 |        665.892 |        666.707 |        750.157 |        750.17  |
+| (30.7, 40.6]    |        538.807 |      440.715 |       406.838 |        540.47  |        603.2   |        695.371 |        662.76  |        909.662 |        752.371 |       1210.9   |
+| (40.6, 50.5]    |        337.364 |      540.222 |       555.521 |        517.41  |        539.306 |        672.257 |        929.242 |        790.26  |        502.4   |        531.2   |
+| (50.5, 60.4]    |        111.667 |      332.933 |       402.6   |        702.033 |        662.973 |        693.825 |        600.15  |        nan     |        815     |        nan     |
+| (60.4, 70.3]    |        431.8   |      793.1   |       141.8   |        314.975 |        515.45  |       1092.67  |        nan     |        nan     |        nan     |        594.3   |
+| (70.3, 80.2]    |        nan     |      336.9   |       nan     |        nan     |        497.875 |        689.1   |       1527.3   |        414     |        491.7   |        nan     |
+| (80.2, 90.1]    |        970.3   |      143     |       221.25  |        nan     |        282.3   |        786     |        nan     |       2309.5   |        nan     |        nan     |
+| (90.1, 100.0]   |        nan     |      nan     |       nan     |        nan     |        nan     |       1289.2   |        nan     |        nan     |        nan     |        nan     |
 
 
 ---

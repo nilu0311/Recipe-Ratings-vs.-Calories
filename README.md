@@ -113,7 +113,7 @@ This grouped table shows the average number of steps based on the number of ingr
 **Average Number of Steps based on the Number of Ingredients** -->
 
 | n_ingredients range   |   n_steps |
-|:----------------------|----------:|
+
 | (0.968, 4.2]          |   6.03895 |
 | (4.2, 7.4]            |   7.83826 |
 | (7.4, 10.6]           |   9.93157 |

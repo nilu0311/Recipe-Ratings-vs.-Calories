@@ -111,6 +111,7 @@ We can also see that most recipes have at most 25 ingredients and 40 steps, and 
 
 <br/>
 
+
 | n_ingredients range   |   n_steps |
 | (0.968, 4.2]          |   6.03895 |
 | (4.2, 7.4]            |   7.83826 |
@@ -122,6 +123,7 @@ We can also see that most recipes have at most 25 ingredients and 40 steps, and 
 | (23.4, 26.6]          |  20.6111  |
 | (26.6, 29.8]          |  23.9792  |
 | (29.8, 33.0]          |  22.913   |
+
 
 
 This grouped table shows the average number of steps based on the range that the number of ingredients of a recipe falls in, and there appears to be a correlation such that recipes with a number of ingredients that fall in a higher bin generally have a greater number of steps on average. We can see that that is not always consistent, as in bin (29.8, 33.0], and that the average number of steps of recipes with a number of ingredients in the range (26.6, 29.8] is the highest, at almost 24 steps. 

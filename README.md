@@ -191,7 +191,7 @@ In addition, the choice of statistic to check the missingness of `avg_rating` by
 
 <br/>
 
-> ### **Missingness of Average Rating by Calories:**
+> #### **Missingness of Average Rating by Calories:**
 
 First we will look at the missingness of `avg_rating` by the `calories` column. The absolute difference in the means and medians of the `calories` column by missingness of `avg_rating` are 45.77 and 29.50 respectively.
 
@@ -248,8 +248,10 @@ Toward this end, we set up a hypothesis test as below:
 
 Since our null hypothesis states that an average rating of 5 stars has no relationship to calories, we will conduct a permutation test to check if calories for each category, recipes with and without a rating of 5 stars on average, come from different distributions.
 
-Upon conducting a permutation test, using the difference in group means for calories of recipes that were rated 5 on average and those that were not as our test statistic, we calculate a p-value of 0.484. With a significance level of 0.05, we fail to reject our null hypothesis. Therefore, we fail to reject that the calories of 5 star average rating recipes and non-5 star average rating recipes have the same distribution.
+Upon conducting a permutation test, using the difference in group means for calories of recipes that were rated 5 on average and those that were not as our test statistic, we calculate a p-value of 0.522. With a significance level of 0.05, we fail to reject our null hypothesis. Therefore, we fail to reject that the calories of 5 star average rating recipes and non-5 star average rating recipes have the same distribution.
 
 The empirical distribution of the test statistics has been visualized below, as well as the observed statistic. 
 
-<iframe src="assets/diff_mean_plt.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/diff_mean_plt2.html" width=800 height=600 frameBorder=0></iframe>
+
+

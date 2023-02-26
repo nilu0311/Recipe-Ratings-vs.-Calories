@@ -193,7 +193,7 @@ In addition, the choice of statistic to check the missingness of `avg_rating` by
 
 > **Missingness of Average Rating by Calorie:**
 
-First we will look at the missingness of 'avg_rating' by the 'calorie' column. The absolute difference in the means and medians of the 'calorie' column by missingness of 'avg_rating' are 45.77 and 29.50 respectively.
+First we will look at the missingness of `avg_rating` by the `calorie` column. The absolute difference in the means and medians of the 'calorie' column by missingness of `avg_rating` are 45.77 and 29.50 respectively.
 
 In the overlaid density plots of the distributions below, we can see that they have the same basic shape.
 
@@ -205,15 +205,15 @@ In the overlaid histograms of the distributions below, we can see that the cente
 <iframe src="assets/cal_bar.html" width=800 height=600 frameBorder=0></iframe>
 
 
-Because the distributions of the values in the 'calorie' column by missingness of 'avg_rating' appear to be shifted versions of the same basic shape, we use the absolute difference in group means as our test statistic. 
+Because the distributions of the values in the `calories` column by missingness of 'avg_rating' appear to be shifted versions of the same basic shape, we use the absolute difference in group means as our test statistic. 
 
-The result of conducting a permutation test using absolute difference in means as the test statistic yielded a p-value of 0.00. With 0.05 as our significance level, this p-value signifies that there is likely a relationship between the missingness of 'avg_rating'  and the values in the  'calorie' column, and therefore we can conclude that 'avg_rating' is MAR, and not MCAR.
+The result of conducting a permutation test using absolute difference in means as the test statistic yielded a p-value of 0.00. With 0.05 as our significance level, this p-value signifies that there is likely a relationship between the missingness of `avg_rating`  and the values in the  `calories` column, and therefore we can conclude that 'avg_rating' is MAR, and not MCAR.
 
 <br/>
 
 > **Missingness of Average Rating by Number of Ingredients**
  
-Now we will look at the missingness of 'avg_rating' by the 'n_ingredients' column. The absolute difference in the means and medians of the 'n_ingredients' column by missingness of 'avg_rating' are 0.26 and 0.0 respectively.
+Now we will look at the missingness of `avg_rating` by the `n_ingredients` column. The absolute difference in the means and medians of the 'n_ingredients' column by missingness of `avg_rating` are 0.26 and 0.0 respectively.
 
 In the overlaid density plots of the distributions below, we can see that they do not have the same basic shape.
 

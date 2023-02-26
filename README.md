@@ -191,9 +191,9 @@ In addition, the choice of statistic to check the missingness of `avg_rating` by
 
 <br/>
 
-> **Missingness of Average Rating by Calorie:**
+> ### **Missingness of Average Rating by Calories:**
 
-First we will look at the missingness of `avg_rating` by the `calorie` column. The absolute difference in the means and medians of the 'calorie' column by missingness of `avg_rating` are 45.77 and 29.50 respectively.
+First we will look at the missingness of `avg_rating` by the `calories` column. The absolute difference in the means and medians of the `calories` column by missingness of `avg_rating` are 45.77 and 29.50 respectively.
 
 In the overlaid density plots of the distributions below, we can see that they have the same basic shape.
 
@@ -211,7 +211,7 @@ The result of conducting a permutation test using absolute difference in means a
 
 <br/>
 
-> **Missingness of Average Rating by Number of Ingredients**
+> #### **Missingness of Average Rating by Number of Ingredients**
  
 Now we will look at the missingness of `avg_rating` by the `n_ingredients` column. The absolute difference in the means and medians of the 'n_ingredients' column by missingness of `avg_rating` are 0.26 and 0.0 respectively.
 
@@ -231,5 +231,24 @@ The result of conducting a permutation test using the Kolmogorov-Smirnov statist
 
 <br/>
 
-## Hypothesis Testing
+## Hypothesis Testing: 
 
+In this section we will investigate if there is a relationship between a recipe being rated 5 stars on average, and the calories of that recipe. 
+The plot below shows the distribution of the `calories` column based on whether or not a recipe was rated 5 stars on average. We can see that the distributions have the same basic shape and appear to be centered similarly.
+
+<iframe src="assets/calorie_ht.html" width=800 height=600 frameBorder=0></iframe>
+
+
+In order to answer our question, we decided to check if our observed difference in mean calories of recipes that were rated 5 stars on average, and those that were not, which came out to be around -0.0097, can be attributed to random chance. 
+Toward this end, we set up a hypothesis test as below:
+
+**Null Hypothesis**: In the population, calories of 5 star rating recipes and non-5 star rating recipes have the same distribution, and the observed differences in our samples are due to random chance.
+**Alternative Hypothesis**: In the population, 5 star rating recipes have more calories than non-5 star rating recipes, on average. The observed difference in our samples cannot be explained by random chance alone.
+
+Since our null hypothesis states that an average rating of 5 stars has no relationship to calories, we will conduct a permutation test to check if calories for each category, recipes with and without a rating of 5 stars on average, come from different distributions.
+
+Upon conducting a permutation test, using the difference in group means for calories of recipes that were rated 5 on average and those that were not as our test statistic, we calculate a p-value of 0.484. With a significance level of 0.05, we fail to reject our null hypothesis. Therefore, we fail to reject that the calories of 5 star average rating recipes and non-5 star average rating recipes have the same distribution.
+
+The empirical distribution of the test statistics has been visualized below, as well as the observed statistic. 
+
+<iframe src="assets/diff_mean_plt.html" width=800 height=600 frameBorder=0></iframe>

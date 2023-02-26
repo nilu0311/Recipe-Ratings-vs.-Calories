@@ -243,6 +243,7 @@ In order to answer our question, we decided to check if our observed difference 
 Toward this end, we set up a hypothesis test as below:
 
 **Null Hypothesis**: In the population, calories of 5 star rating recipes and non-5 star rating recipes have the same distribution, and the observed differences in our samples are due to random chance.
+
 **Alternative Hypothesis**: In the population, 5 star rating recipes have more calories than non-5 star rating recipes, on average. The observed difference in our samples cannot be explained by random chance alone.
 
 Since our null hypothesis states that an average rating of 5 stars has no relationship to calories, we will conduct a permutation test to check if calories for each category, recipes with and without a rating of 5 stars on average, come from different distributions.

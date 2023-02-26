@@ -76,7 +76,7 @@ The DataFrame resulting from this cleaning, which we will refer to as `clean_mer
 For the univariate analysis of the `clean_merged` DataFrame, we first extracted the `avg_rating`, `calories`, and `n_steps` columns, and generated plots as below:
 
 <iframe src="assets/Univariate_plt1.html" width=800 height=600 frameBorder=0></iframe>
-"assets/Univariate_plt1.html" = 4*4
+
 
 This histogram shows the distribution of the `avg_rating` column in our cleaned dataset, and we can see that slightly over 75% of  recipes have average ratings that fall in the bin [4.5, 5.5), meaning that most recipes had a rating from 4.5 to 5. On analysis of the dataset, of the 82,944 recipes, 60,340 were rated at least 4.5, and 47,276 were rated 5, on average.
 
@@ -111,7 +111,7 @@ We can also see that most recipes have at most 25 ingredients and 40 steps, and 
 
 <br/>
 
-
+<center>
 | n_ingredients range   |   n_steps |
 | (0.968, 4.2]          |   6.03895 |
 | (4.2, 7.4]            |   7.83826 |
@@ -123,6 +123,7 @@ We can also see that most recipes have at most 25 ingredients and 40 steps, and 
 | (23.4, 26.6]          |  20.6111  |
 | (26.6, 29.8]          |  23.9792  |
 | (29.8, 33.0]          |  22.913   |
+</center>
 
 This grouped table shows the average number of steps based on the range that the number of ingredients of a recipe falls in, and there appears to be a correlation such that recipes with a number of ingredients that fall in a higher bin generally have a greater number of steps on average. We can see that that is not always consistent, as in bin (29.8, 33.0], and that the average number of steps of recipes with a number of ingredients in the range (26.6, 29.8] is the highest, at almost 24 steps. 
  
@@ -183,6 +184,47 @@ We believe that the `description` column is NMAR, because the column contains `n
 
 <br/>
 
+In this section we will focus on analyzing the missingness in the `avg_rating` column. Specifically we want to determine whether or not the data in this column is MAR or MCAR. To approach this question, we will look at the distribution of values in other columns when values in   `avg_rating` are missing and are not missing.If these distributions look the same regardless of the missingness of the `avg_rating`, we conclude that missingness in the `avg_rating` column does not depend on that column, and that the missingness in the `avg_rating` column depends on that column otherwise. If we find a single column that the missingness of `avg_rating` depends on, we conclude that `avg_rating` is MAR, and not MCAR.
+
+In addition, the choice of statistic to check the missingness of `avg_rating` by another column depends on a few key pieces of information. Because the values we will be using in this step are all numerical / quantitative, we can either use the difference in group means of the Kolmogorov-Smirnov statistic. If the distributions of a column by missingness of `avg_rating` look like shifted versions of the same shape, we use the difference in group means, and if the distributions look like different shapes but are centered at the same location we use the  Kolmogorov-Smirnov statistic.
+
+<br/>
+
+> **Missingness of Average Rating by Calorie:**
+
+First we will look at the missingness of 'avg_rating' by the 'calorie' column. The absolute difference in the means and medians of the 'calorie' column by missingness of 'avg_rating' are 45.77 and 29.50 respectively.
+
+In the overlaid density plots of the distributions below, we can see that they have the same basic shape.
+
+
+<iframe src="assets/cal_density.html" width=800 height=600 frameBorder=0></iframe>
+
+In the overlaid histograms of the distributions below, we can see that the centers are shifted.
+
+<iframe src="assets/cal_bar.html" width=800 height=600 frameBorder=0></iframe>
+
+
+Because the distributions of the values in the 'calorie' column by missingness of 'avg_rating' appear to be shifted versions of the same basic shape, we use the absolute difference in group means as our test statistic. 
+
+The result of conducting a permutation test using absolute difference in means as the test statistic yielded a p-value of 0.00. With 0.05 as our significance level, this p-value signifies that there is likely a relationship between the missingness of 'avg_rating'  and the values in the  'calorie' column, and therefore we can conclude that 'avg_rating' is MAR, and not MCAR.
+
+<br/>
+
+> **Missingness of Average Rating by Number of Ingredients**
+ 
+Now we will look at the missingness of 'avg_rating' by the 'n_ingredients' column. The absolute difference in the means and medians of the 'n_ingredients' column by missingness of 'avg_rating' are 0.26 and 0.0 respectively.
+
+In the overlaid density plots of the distributions below, we can see that they do not have the same basic shape.
+
+<iframe src="assets/ing_bar.html" width=800 height=600 frameBorder=0></iframe>
+
+In the overlaid histograms of the distributions below, we can see that the centers are not shifted.
+
+<iframe src="assets/ing_density.html" width=800 height=600 frameBorder=0></iframe>
+
+Because the distributions of the values in the `n_ingredients` column by missingness of `avg_rating` appear to have different shapes, but are similarly centered, we use the  Kolmogorov-Smirnov statistic as our test statistic. 
+
+The result of conducting a permutation test using the Kolmogorov-Smirnov statistic as the test statistic yielded a p-value of 0.10. With 0.05 as our significance level, this p-value signifies that there is likely not a relationship between the missingness of `avg_rating` and the values in the  `n_ingredients` column.
 
 ---
 

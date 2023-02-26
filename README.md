@@ -1,5 +1,7 @@
 # Investigating the Relationship Between Recipe Rating and Calories
 
+<br/>
+
 ## Introduction
 
 
@@ -34,10 +36,9 @@ Using this merged dataset, we calculated the average ratings of each recipe, and
 
 
 ---
+<br/>
 
 ## Cleaning and EDA
-
-<br/>
 
 ### Data Cleaning:
 
@@ -75,6 +76,7 @@ The DataFrame resulting from this cleaning, which we will refer to as `clean_mer
 For the univariate analysis of the `clean_merged` DataFrame, we first extracted the `avg_rating`, `calories`, and `n_steps` columns, and generated plots as below:
 
 <iframe src="assets/Univariate_plt1.html" width=800 height=600 frameBorder=0></iframe>
+"assets/Univariate_plt1.html" = 40*40
 
 This histogram shows the distribution of the `avg_rating` column in our cleaned dataset, and we can see that slightly over 75% of  recipes have average ratings that fall in the bin [4.5, 5.5), meaning that most recipes had a rating from 4.5 to 5. On analysis of the dataset, of the 82,944 recipes, 60,340 were rated at least 4.5, and 47,276 were rated 5, on average.
 
@@ -92,13 +94,16 @@ For the bivariate analysis of the `clean_merged` DataFrame, we first extracted t
 
 <iframe src="assets/Bivariate_plt1.html" width=800 height=600 frameBorder=0></iframe>
 
-This scatterplot shows the average rating based on the number of calories in a recipe, and there …
+This scatterplot shows the average rating based on the number of calories in a recipe, and there does not appear to be a pattern such that a higher number of calories correlates to a higher or lower average rating. 
 
-We can also see that most recipes are under 1,000 calories and most have an average rating greater than 4, and analysis of the dataset shows that of the 82,944 recipes, 266 have over 1,000 calories and a rating less than 4. 
+We can also see that most recipes are under 1,000 calories and most have an average rating greater than 4, and analysis of the dataset shows that of the 82,944 recipes, 266 have over 1,000 calories and a rating less than 4.  
 
 <iframe src="assets/Bivariate_plt2.html" width=800 height=600 frameBorder=0></iframe>
 
-This scatterplot shows the number of steps based on the number of ingredients in a recipe, and there does not appear to be a pattern such that a higher number of ingredients correlates to a higher or lower number of steps. We can also see that most recipes have at most 25 ingredients and 40 steps, and analysis of the dataset shows that of the 82,944 recipes, 9 have over 25 ingredients and 40 steps.
+This scatterplot shows the number of steps based on the number of ingredients in a recipe, and there does not appear to be a pattern such that a higher number of ingredients correlates to a higher or lower number of steps, but we see that recipes with a number of ingredients in the range [10, 20] are more likely to have over 60 steps. 
+
+We can also see that most recipes have at most 25 ingredients and 40 steps, and analysis of the dataset shows that of the 82,944 recipes, 9 have over 25 ingredients and 40 steps. 
+
 
 <br/>
 
@@ -138,6 +143,10 @@ This grouped table shows the average number of steps based on the range that the
 | (4.6, 5.0]         |    383.374 |
 
 
+
+<br/>
+
+
 This grouped table shows the average number of calories based on the range that the average rating of a recipe falls in, and there appears to be no correlation that would allow us to say that recipes with an average rating that fall in a higher bin have a greater or lesser number of calories on average. We can also see that recipes with an average rating in the bin (1.8, 2.2] have the maximum of around 399 calories on average, while bin (2.2, 2.6] has the minimum of around 326 calories on average.
 
 | n_steps_range   |   (0.968, 4.2] |   (4.2, 7.4] |   (7.4, 10.6] |   (10.6, 13.8] |   (13.8, 17.0] |   (17.0, 20.2] |   (20.2, 23.4] |   (23.4, 26.6] |   (26.6, 29.8] |   (29.8, 33.0] |
@@ -152,10 +161,32 @@ This grouped table shows the average number of calories based on the range that 
 | (80.2, 90.1]    |        970.3   |      143     |       221.25  |        nan     |        282.3   |        786     |        nan     |       2309.5   |        nan     |        nan     |
 | (90.1, 100.0]   |        nan     |      nan     |       nan     |        nan     |        nan     |       1289.2   |        nan     |        nan     |        nan     |        nan     |
 
+This pivot table uses the combination of ranges that the number of ingredients and the number of steps of a recipe falls in, and shows the average calories of all recipes that fall in that intersection. For recipes in a specific bin of the number of steps, the average number of calories does not appear to show a consistent pattern as the number of ingredients increases, and similarly there does not appear to be a pattern for average calories of recipes in a specific bin of the number of ingredients as the number of steps increases. 
 
 ---
+
+<br/>
+
 ## Assessment of Missingness
 
+<br/>
+
+### NMAR Analysis
+
+<br/>
+
+We believe that the `description` column is NMAR, because the column contains `np.nan` when the `description` was originally `np.nan` or invalid, which we interpreted as being a `description` that did not contain any alphanumeric values in the value string. The missing `description` values depend on the missing value itself, because a `description` is missing when the individual who created the recipe either did not enter a `description` at all, or they entered an invalid (entirely non-alphanumeric) `description`. Additionally we identified this column as being NMAR because the missing `description` did not depend on any other column in our cleaned DataFrame. 
+
+<br/>
+
+### Missingness Dependency
+
+<br/>
+
+
 ---
+
+<br/>
+
 ## Hypothesis Testing
 

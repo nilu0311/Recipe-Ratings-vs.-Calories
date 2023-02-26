@@ -76,7 +76,7 @@ The DataFrame resulting from this cleaning, which we will refer to as `clean_mer
 For the univariate analysis of the `clean_merged` DataFrame, we first extracted the `avg_rating`, `calories`, and `n_steps` columns, and generated plots as below:
 
 <iframe src="assets/Univariate_plt1.html" width=800 height=600 frameBorder=0></iframe>
-"assets/Univariate_plt1.html" = 40*40
+"assets/Univariate_plt1.html" = 4*4
 
 This histogram shows the distribution of the `avg_rating` column in our cleaned dataset, and we can see that slightly over 75% of  recipes have average ratings that fall in the bin [4.5, 5.5), meaning that most recipes had a rating from 4.5 to 5. On analysis of the dataset, of the 82,944 recipes, 60,340 were rated at least 4.5, and 47,276 were rated 5, on average.
 

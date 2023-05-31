@@ -1,4 +1,5 @@
 # Investigating the Relationship Between Recipe Rating and Calories
+Cassidy Lu and Harshita Saha
 
 <br/>
 
